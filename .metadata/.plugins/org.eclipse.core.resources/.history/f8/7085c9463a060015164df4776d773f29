@@ -1,0 +1,15 @@
+package lucky_stats.analyzer;
+
+import java.io.FileNotFoundException;
+
+public class Main {
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		Parser parser1 = new Parser();
+		double[] a = parser1.analyze();
+		pickNum pick = new pickNum(a);
+		int [] result = pick.getBestSix();
+		System.out.println(result[0]);
+	}
+
+}

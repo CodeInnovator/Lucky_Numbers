@@ -1,0 +1,79 @@
+package lucky_stats.analyzer;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Parser {
+int[] distribution;
+int[] result;
+int counter;
+	public Parser() throws FileNotFoundException{
+		distribution = new int[50];
+		reader();
+		System.out.println(distribution[1]+","+ distribution[2]+","+ distribution[3]+","+ distribution[4]);
+		analyze();
+	}
+	public void reader() throws FileNotFoundException {
+		String file = "/Users/KB/JAVA_Developement/LOTTOMAX.csv";
+		BufferedReader br = null;
+		String line = "";
+		String cvsSplitBy = ",";
+		String n1;
+		int nb1;
+		
+		try {
+			 counter = 0;
+			br = new BufferedReader(new FileReader(file));
+			while ((line = br.readLine()) != null) {
+			        // use comma as separator
+				
+				String[] draws = line.split(cvsSplitBy);
+				if(draws[0].contains("PRODUCT")){
+					continue;
+				} else{	
+					n1 = draws[4];
+					nb1 = Integer.parseInt(n1);
+					counter++;
+					distribution[nb1]++;
+					System.out.println(nb1);
+			
+				}
+				
+			}
+	 
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	 
+		
+	  }
+	
+	public void analyze(){
+		
+		System.out.println(counter);
+		//System.out.println(distribution[2]);
+		int prob;
+		this.result = new int[49];
+		for(int i = 0; i<= 49; i++){
+				
+			//result[i] = prob;
+			//System.out.println(this.distribution[i]);
+		}
+		
+	}
+	
+	
+}
+		

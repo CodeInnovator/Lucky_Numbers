@@ -1,0 +1,55 @@
+package lucky_stats.analyzer;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.custom.ViewForm;
+import org.eclipse.swt.widgets.ProgressBar;
+
+public class Lucky_Stats_UI {
+
+	protected Shell shell;
+
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			Lucky_Stats_UI window = new Lucky_Stats_UI();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+		shell.open();
+		shell.layout();
+		while (!shell.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+	}
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shell = new Shell();
+		shell.setSize(450, 300);
+		shell.setText("SWT Application");
+		
+		Button btnGenerateNumbers = new Button(shell, SWT.NONE);
+		btnGenerateNumbers.setBounds(146, 183, 152, 28);
+		btnGenerateNumbers.setText("Generate Numbers");
+
+	}
+}
