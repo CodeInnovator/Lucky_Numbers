@@ -15,7 +15,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.swing.JTextArea;
-import javax.swing.JLabel;
 
 public class Lucky_Stats_UI extends JFrame {
 
@@ -103,10 +102,6 @@ public class Lucky_Stats_UI extends JFrame {
 		
 		btnGenerateButton.setBounds(180, 188, 101, 50);
 		contentPane.add(btnGenerateButton);
-		
-		JLabel lblLuckyNumber = new JLabel("Lucky Number");
-		lblLuckyNumber.setBounds(50, 6, 126, 16);
-		contentPane.add(lblLuckyNumber);
 		
 		
 		

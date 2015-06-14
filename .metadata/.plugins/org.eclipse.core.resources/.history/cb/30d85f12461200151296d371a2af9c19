@@ -65,9 +65,11 @@ public class Parser {
 					try {
 						extractFile(zis, filePath);
 					} catch (IOException e) {
+						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else {
+					// if the entry is a directory, make the directory
 					File dir = new File(filePath);
 					dir.mkdir();
 				}
@@ -77,8 +79,10 @@ public class Parser {
 			zis.close();
 
 		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
