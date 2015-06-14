@@ -61,7 +61,7 @@ public class Lucky_Stats_UI extends JFrame {
 	
 				try {
 					parser1 = new Parser();
-					
+					parser1.downloadZip();
 					
 					
 					

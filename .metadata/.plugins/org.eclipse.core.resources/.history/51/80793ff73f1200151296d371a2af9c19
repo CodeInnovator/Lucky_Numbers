@@ -32,7 +32,6 @@ String saveTo ="Users/KB/JAVA_Development/";
 List<String> fileList;
 private static final String INPUT_ZIP_FILE = "C:\\MyFile.zip";
 private static final String OUTPUT_FOLDER = "C:\\outputzip";
-private static final int BUFFER_SIZE = 4096;
 
 	public Parser() throws FileNotFoundException{
 		distribution = new int[50];
@@ -42,8 +41,8 @@ private static final int BUFFER_SIZE = 4096;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		unzipfile();
-		reader();
+		//reader();
+		
 	}
 	
 	public void download() throws IOException{

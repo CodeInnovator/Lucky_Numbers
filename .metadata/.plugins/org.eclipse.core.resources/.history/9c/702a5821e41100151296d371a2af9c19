@@ -11,8 +11,6 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import javax.swing.JTextArea;
 
@@ -20,9 +18,8 @@ public class Lucky_Stats_UI extends JFrame {
 
 	private JPanel contentPane;
 	JTextArea textArea = new JTextArea();
-	//private String file = "/Users/KB/JAVA_Developement/LOTTOMAX.csv";	
-	private String file = "LOTTOMAX.csv";
-	public URL link;
+	
+
 	/**
 	 * Launch the application.
 	 */
@@ -58,13 +55,8 @@ public class Lucky_Stats_UI extends JFrame {
 		btnGenerateButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)  {
 				Parser parser1;
-	
 				try {
 					parser1 = new Parser();
-					
-					
-					
-					
 					double[] a = parser1.analyze();
 					pickNum pick = new pickNum(a);
 					int [] result = pick.getBestSix();

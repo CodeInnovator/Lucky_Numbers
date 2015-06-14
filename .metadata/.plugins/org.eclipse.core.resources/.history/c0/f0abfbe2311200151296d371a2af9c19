@@ -58,10 +58,15 @@ public class Lucky_Stats_UI extends JFrame {
 		btnGenerateButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)  {
 				Parser parser1;
-	
+				try {
+					link = new URL("http://www.bclc.com/documents/DownloadableNumbers/CSV/LOTTOMAX.zip");
+				} catch (MalformedURLException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
 				try {
 					parser1 = new Parser();
-					
+					parser1.unpackArchive(link, targetDir);
 					
 					
 					
