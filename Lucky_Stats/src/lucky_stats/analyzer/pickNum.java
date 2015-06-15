@@ -2,10 +2,18 @@ package lucky_stats.analyzer;
 
 public class pickNum {
 	int[] bestPick = new int[7];
+	int[] worstPick = new int[7];
 	int counter = 0;
 	
-	public pickNum(double[] a){
+	public pickNum(double[] a, int b){
+		if (b == 1){
 		bestSix(a);
+		}else if( b == 0){
+			worstSix(a);
+		} else{
+			System.out.println("wrong");
+		}
+			
 	}
 
 	private void bestSix(double[] a) {
@@ -16,11 +24,19 @@ public class pickNum {
 		double[] n5 = bestNumber(n4);
 		double[] n6 = bestNumber(n5);
 		double[] n7 = bestNumber(n6);
-	
-		
-		
-		
 	}
+	
+	private void worstSix(double[] b){
+		double[] n1 = worstNumber(b);
+		double[] n2 = worstNumber(n1);
+		double[] n3 = worstNumber(n2);
+		double[] n4 = worstNumber(n3);
+		double[] n5 = worstNumber(n4);
+		double[] n6 = worstNumber(n5);
+		double[] n7 = worstNumber(n6);
+	}
+		
+		
 	private double[] bestNumber(double[] a){
 		int c = a.length-1;
 		double[] copy;
@@ -41,7 +57,33 @@ public class pickNum {
 		return copy;
 	}
 	
+	
+	private double[] worstNumber(double[] b){
+		int c = b.length-1;
+		double[] copy;
+		double lowest = 100;
+		int bestNum = 0;
+		copy = b;
+		
+		for (int i = 0; i <= c; i++){
+			double r = copy[i];
+			if(lowest > r){
+			bestNum = i;
+			lowest = r;
+			copy[i] = 100.0;
+			}
+		}
+		worstPick[counter] = bestNum;
+		counter++;
+		return copy;
+	}
+	
+	
 	public int[] getBestSix(){
 		return bestPick;
+	}
+	
+	public int[] getWorstSix(){
+		return worstPick;
 	}
 }

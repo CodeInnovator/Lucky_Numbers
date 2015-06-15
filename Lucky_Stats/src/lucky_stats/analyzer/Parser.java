@@ -28,6 +28,7 @@ public class Parser {
 	int counter;
 	String saveTo ="Users/KB/JAVA_Development/";
 	private static final int BUFFER_SIZE = 4096;
+	private String date;
 
 	public Parser() throws FileNotFoundException{
 		distribution = new int[50];
@@ -114,6 +115,7 @@ public class Parser {
 				if(draws[0].contains("PRODUCT")){
 					continue;
 				} else{
+					countDate(draws[3]);
 					preAnalyze(draws[4]);
 					preAnalyze(draws[5]);
 					preAnalyze(draws[6]);
@@ -169,7 +171,15 @@ public class Parser {
 		}
 		return result;
 	}
-
+	
+	public void countDate(String update){
+		this.date = update;
+		
+	}
+	
+	public String recentDate(){
+		return date;
+	}
 
 }
 

@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="las"/>
 			<item value="int"/>
 			<item value="setText"/>
 			<item value="contentpane"/>
